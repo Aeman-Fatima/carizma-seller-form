@@ -1,6 +1,4 @@
 .car-header {
-  padding-left: 95px;
-  margin-top: 110px;
   font-size: 1rem;
   /* margin: 25px 0 0 95px; */
   align-items: center;
@@ -12,7 +10,6 @@
 
 .car-stepper-content {
   background: white;
-  margin: 25px 100px 10rem 95px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 9px;
   min-width: 400px;
   max-height: 120rem;
@@ -122,10 +119,10 @@ mat-horizontal-stepper {
 }
 .mat-mdc-radio-button {
   border:0 !important;
-  background-color: white !important;
+  background: none !important;
 }
 .mat-mdc-radio-checked{
-  background-color: #cee6f3  !important;
+  background: none  !important;
 }
 
 @media only screen and (max-width: 768px) {

@@ -10,7 +10,7 @@
 
 
 .question-label {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 600;
 }
 
@@ -21,10 +21,10 @@
 }
 
 .buttonContainer{
-  margin-top: 7%;
+  margin-top: 1rem;
 }
 .nextBtn{
-  padding: 5px 4rem !important;
+  padding: 5px 2rem !important;
   border-radius: 10px !important;
   margin: 10px 5px;
   background-color: #67A6F8 !important;
@@ -32,7 +32,7 @@
   font-family: 'Open Sans', sans-serif;
 }
 .previousBtn{
-    padding: 10px 4rem !important;
+    padding: 10px 2rem !important;
     border-radius: 10px !important;
     background-color: #1b1b1b !important;
     color: white !important;
@@ -47,7 +47,7 @@
 }
 
 .example-radio-button {
-  margin: 5px;
+  margin: -1rem;
 }
 
 .example-h2 {
@@ -56,8 +56,8 @@
 
 .car-selection-space {
   left: 5vw;
-  top: 15vh;
-  bottom: 25vh;
+  top: 2vh;
+  bottom: 2vh;
 }
 
 .car-Declaration {
@@ -103,7 +103,7 @@ mat-radio-button {
 }
 
 .example-radio-button {
-  margin: 3px;
+  margin: -1rem;
 }
 
 .question-slider {
@@ -189,8 +189,8 @@ mat-radio-button {
 }
 
 .content-title {
-  font-size: 1.8rem;
-  font-weight: 480;
+  font-size: 1rem;
+  font-weight: 600;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -201,7 +201,7 @@ mat-radio-button {
   padding-right: 0;
   order: 0;
   font-family: 'Open Sans', sans-serif;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 .mat-stepper-horizontal {

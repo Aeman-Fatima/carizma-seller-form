@@ -259,7 +259,7 @@ export class CarStepperComponent {
     
 
     this._store.sellerCompleteDetails.vehicleDetails.mileage = 300000;
-    this.router.navigateByUrl('contact-us')
+    // this.router.navigateByUrl('contact-us')
   }
 
   callApiToGetInstantOffer() {
