@@ -27,14 +27,10 @@ import { ToastrModule } from 'ngx-toastr';
 import { ConfirmModalComponent } from './common/confirm-modal/confirm-modal.component';
 import { WhatIsVinComponent } from './common/what-is-vin/what-is-vin.component';
 import { DialogComponent } from './common/dialog/dialog.component';
-import { FormComponent } from './sell-car/form/form.component';
-import { MatGridListModule } from '@angular/material/grid-list';
-import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormComponent,
     CarSelectionComponent,
     LicensePlateSelectionComponent,
     VinSelectionComponent,
@@ -49,15 +45,13 @@ import { CommonModule } from '@angular/common';
     ReviewPageComponent,
     CarLoaderComponent,
     DialogComponent,
-    ConfirmModalComponent,
+    ConfirmModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    CommonModule,
-    MatGridListModule,
     FlexLayoutModule,
     FormsModule,
     ReactiveFormsModule,
