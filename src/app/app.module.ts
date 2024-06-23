@@ -28,6 +28,8 @@ import { ConfirmModalComponent } from './common/confirm-modal/confirm-modal.comp
 import { WhatIsVinComponent } from './common/what-is-vin/what-is-vin.component';
 import { DialogComponent } from './common/dialog/dialog.component';
 import { FormComponent } from './sell-car/form/form.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -54,6 +56,8 @@ import { FormComponent } from './sell-car/form/form.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    CommonModule,
+    MatGridListModule,
     FlexLayoutModule,
     FormsModule,
     ReactiveFormsModule,
