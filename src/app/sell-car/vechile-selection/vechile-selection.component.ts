@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import {
   FormBuilder,
   FormControl,
@@ -42,6 +42,8 @@ export class VechileSelectionComponent {
   manualVechileSelectionForm: FormGroup;
 
   modelDetails = { make: '', year: '',model:'',trim:''};
+  @Output() setQuestionnaire = new EventEmitter<boolean>();
+
   constructor(
     private _service: NHTSAService,
     public _store: SellCarStoreService,
@@ -171,7 +173,7 @@ export class VechileSelectionComponent {
     // plateNumber?: string;
     // state?: string;
     this._store.setCurrentSellVechileDetails(carSelection)
-    this.router.navigate(['/questionaire']);
+    this.setQuestionnaire.emit(true);
   }
   }
   getErrorMessage() {

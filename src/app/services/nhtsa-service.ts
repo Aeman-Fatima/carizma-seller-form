@@ -6,7 +6,7 @@ import {
   IVechileData,
   IVechileLicenseData,
 } from '../models/IVechile';
-import { Observable, map, of } from 'rxjs';
+import { Observable} from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import {
@@ -17,17 +17,10 @@ import {
   getRequestOffer_URL,
   getSellerOffer_URL,
   getVechileDetailssByLicenseNumberURL,
-  getSellerVehicleInfo_URL,
-  getSellerVehicleCompleteInfo_URL,
-  updateProfileInfo_URL,
-  getProfileInfo_URL,
-  getlocalhostURL,
-  sendEmail_URL,
   salesForceAPI_URL,
 } from '../constants.ts/constants';
 import { IMake, IState } from '../models/IState';
 import { ISellerVechileDetails } from '../models/ISellerVechileDetails';
-import { IBuyerDetails, ISellerVehicle, ProfileInfoObject } from '../models/ISellVechile';
 import { TokenStorageService } from './TokenStorageService';
 
 @Injectable({
@@ -47,10 +40,6 @@ export class NHTSAService {
     let data: IVechileData = decodedVehicle;
 
     return data;
-  }
-
-  getMakes(year: Number): Observable<string[]> {
-    return this.http.get<string[]>(environment.apiURL + getAllMakes_URL(year));
   }
 
   getAllMakes(year: Number): Observable<IMake[]> {
@@ -103,79 +92,10 @@ export class NHTSAService {
     );
   }
 
-  getHeaders(): any {
-    const headers = new Headers({
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': '*',
-      Authorization: `Bearer ${this.token.getToken()}`,
-    });
-    const httpOptions = {
-      headers: headers,
-    };
-    return httpOptions;
-  }
-
   RequestOffer(offerData: IOfferStatusData): Observable<IOfferData> {
     return this.http.put<IOfferData>(
       environment.apiURL + getRequestOffer_URL(),
       offerData
-    );
-  }
-  getSellerVehicleDetails(): Observable<ISellerVehicle[]> {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': '*',
-        Authorization: `Bearer ${this.token.getToken()}`,
-      }),
-    };
-
-    return this.http.post<ISellerVehicle[]>(
-      environment.apiURL + getSellerVehicleInfo_URL(),
-      { email_id: this.token.getEMail() }
-    );
-  }
-
-  getSellerCompleteDetails(
-    sellerId: number,
-    vehicleid: number
-  ): Observable<any> {
-    let data = { seller_id: sellerId, vehicle_id: vehicleid };
-    return this.http.post<any>(
-      environment.apiURL + getSellerVehicleCompleteInfo_URL(),
-      data
-    );
-  }
- 
-
-  getUserProfileDetails(): Observable<ProfileInfoObject> {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': '*',
-        Authorization: `Bearer ${this.token.getToken()}`,
-      }),
-    };
-
-    return this.http.post<ProfileInfoObject>(
-      environment.apiURL + getProfileInfo_URL(), { email_id: this.token.getEMail() }
-    );
-  }
-
-  updateUserProfileDetails(sellerInfo: ProfileInfoObject): Observable<ProfileInfoObject> {  
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': '*',
-        Authorization: `Bearer ${this.token.getToken()}`,
-      }),
-    };
-    return this.http.put<ProfileInfoObject>(
-      environment.apiURL + updateProfileInfo_URL(),sellerInfo     
     );
   }
 
@@ -190,17 +110,4 @@ export class NHTSAService {
     );
   }
 
-  submitUserDetails(userDetails:IBuyerDetails): Observable<IBuyerDetails> {  
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': '*',
-        Authorization: `Bearer ${this.token.getToken()}`,
-      }),
-    };
-    return this.http.put<IBuyerDetails>(
-      environment.apiURL + sendEmail_URL(),userDetails     
-    );
-  }
 }

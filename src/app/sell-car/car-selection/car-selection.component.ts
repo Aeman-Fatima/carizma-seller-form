@@ -8,5 +8,9 @@ import { Component, ViewEncapsulation } from '@angular/core';
 })
 
 export class CarSelectionComponent {
-
+  questionnaire = false
+  toggleQuestionnaire = (questionnaire: boolean) => {
+    console.log(questionnaire)
+    this.questionnaire = questionnaire;
+  }
 }

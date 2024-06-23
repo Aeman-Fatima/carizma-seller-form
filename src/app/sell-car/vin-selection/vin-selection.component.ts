@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import {
   MatBottomSheet,
@@ -8,8 +8,6 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { WhatIsVinComponent } from 'src/app/common/what-is-vin/what-is-vin.component';
 import { SellCarStoreService } from 'src/app/services/SellCarStore.Service';
-import { AlertService } from 'src/app/services/alert.service';
-import { CommondataSellService } from 'src/app/services/commondata-sell.service';
 import { NHTSAService } from 'src/app/services/nhtsa-service';
 
 @Component({
@@ -19,12 +17,13 @@ import { NHTSAService } from 'src/app/services/nhtsa-service';
 })
 export class VinSelectionComponent {
   isLoading: boolean = false;
+  @Output() setQuestionnaire = new EventEmitter<boolean>();
+
   constructor(
     public dataService: SellCarStoreService,
     private router: Router,
     private _nhtsaervice: NHTSAService,
     private _bottomSheet: MatBottomSheet,
-    public alertService: AlertService,
     private toaster: ToastrService,
   ) { }
   vin = new FormControl('', [Validators.required, Validators.minLength(17)]);
@@ -49,7 +48,7 @@ export class VinSelectionComponent {
           });
           console.log(s,'s')
           if(s.ErrorCode ==='0'){
-            this.router.navigate(['/questionaire']);
+            this.setQuestionnaire.emit(true);
           }else{
             this.errorMessage['vinErrorText']="Invalid VIN Number"
           }

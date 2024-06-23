@@ -3,7 +3,6 @@ import {
   IVechileConditionQuestionaire,
   IVechileDetailQuestionaire,
 } from '../questionaire/questionsJson';
-import { IQuestion } from './IQuestion';
 import { IVechileData, IVechileModelDetails } from './IVechile';
 
 export class ISellerVechileDetails {

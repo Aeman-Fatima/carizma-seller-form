@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators,FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -6,7 +6,6 @@ import { Observable, map, of, startWith } from 'rxjs';
 import { IState } from 'src/app/models/IState';
 import { IVechileModelDetails } from 'src/app/models/IVechile';
 import { SellCarStoreService } from 'src/app/services/SellCarStore.Service';
-import { AlertService } from 'src/app/services/alert.service';
 import { CommondataSellService } from 'src/app/services/commondata-sell.service';
 import { MockDataService } from 'src/app/services/mock-data.service';
 import { NHTSAService } from 'src/app/services/nhtsa-service';
@@ -17,6 +16,8 @@ import { NHTSAService } from 'src/app/services/nhtsa-service';
   styleUrls: ['./license-plate-selection.component.css'],
 })
 export class LicensePlateSelectionComponent implements OnInit {
+  @Output() setQuestionnaire = new EventEmitter<boolean>();
+
   myForm!: FormGroup;
   states: string[] = [];
   filteredOptions: Observable<string[]> = of([]);
@@ -34,7 +35,6 @@ export class LicensePlateSelectionComponent implements OnInit {
     public _sellCarService: SellCarStoreService,
     private router: Router,
     private _nhtsa: NHTSAService,
-    private alertService: AlertService,
     private toaster: ToastrService,
     private fb: FormBuilder
   ) {
@@ -98,13 +98,9 @@ export class LicensePlateSelectionComponent implements OnInit {
           carSelection.plateNumber =
             this.licensePlateSelection.controls.licensePlateNumber.value ?? '';
           carSelection.state = this.myStateControl.value;
-          // carSelection.make = '';
-          // carSelection.model = '';
-          // carSelection.trim = '';
-          // carSelection.vin = '';
           this._sellCarService.setCurrentSellVechileDetails(carSelection);
 
-          this.router.navigate(['/questionaire']);
+          this.setQuestionnaire.emit(true);
         },
         (error: Error) => {
           if (error.message.includes('404')) {

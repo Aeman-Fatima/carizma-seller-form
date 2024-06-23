@@ -1,8 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
 import { ISellerVechileDetails } from 'src/app/models/ISellerVechileDetails';
 import { SellCarStoreService } from 'src/app/services/SellCarStore.Service';
-import { AlertService } from 'src/app/services/alert.service';
 import { NHTSAService } from 'src/app/services/nhtsa-service';
 import { ReviewService } from 'src/app/services/review.service';
 
@@ -23,7 +21,6 @@ export class ReviewPageComponent {
   constructor(
     private reviewService: ReviewService,
     public _store: SellCarStoreService,
-    private alertService: AlertService,
     private _nhtsaervice: NHTSAService
   ) {
     this.selectedMake = this._store.sellerCompleteDetails.carDetails?.make;
@@ -32,31 +29,10 @@ export class ReviewPageComponent {
   }
 
   ngOnInit() {
-    // this.isLoading = true;
-    // this._nhtsaervice.getInstantOffer(this._store.sellerCompleteDetails).subscribe((res) => {
-    //   setTimeout( () =>this.isLoading = false, 3000);
-    //   // this.offerPrice = Math.floor(Math.random() * 300000);
-    // },error => {
-    //   this.isLoading = false;
-    //   this.alertService.error('Error Occured while fetching instance offer: ', error.message)
-    // })
-    // this.checked = this.reviewCheckbox.value
-    // if (this.reviewCheckbox.value) {
-    //   this.checkValue(this.reviewCheckbox.value)
-    // }
-    // this.reviewCheckbox.valueChanges.subscribe(check => {
-    //   this.checkValue(check)
-    // })
+
 
   }
-  // checkValue(value: any) {
-  //   this.reviewService.reviewPageStepper = value
-  //   if (value) {
-  //     this.reviewPageValidated.emit(true);
-  //   } else {
-  //     this.reviewPageValidated.emit(false);
-  //   }
-  // }
+
   routeToStepperIndex(index: number) {
     this.reviewService.setStepperIndex(index);
   }

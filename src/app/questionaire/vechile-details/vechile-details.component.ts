@@ -1,13 +1,11 @@
-import { ChangeDetectorRef, Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
-import { IVechileData, IVechileModelDetails } from 'src/app/models/IVechile';
-import { CommondataSellService } from 'src/app/services/commondata-sell.service';
+import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
+import { IVechileModelDetails } from 'src/app/models/IVechile';
 import { NHTSAService } from 'src/app/services/nhtsa-service';
 import { IVechileConditionQuestionaire, IVechileDetailQuestionaire } from '../questionsJson';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { SellCarStoreService } from 'src/app/services/SellCarStore.Service';
-import { ISellerVechileDetails } from 'src/app/models/ISellerVechileDetails';
 import { ReviewService } from 'src/app/services/review.service';
-import { Subject, takeUntil } from 'rxjs';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-vechile-details',
