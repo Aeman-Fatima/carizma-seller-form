@@ -44,7 +44,7 @@ left: auto;
 .mdc-tab {
   max-width: none !important;
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 600px) {
   .mdc-tab {
     padding-right: 20px !important;
     padding-left: 20px !important;
