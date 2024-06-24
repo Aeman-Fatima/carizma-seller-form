@@ -11,7 +11,9 @@
 .mat-tab-group {
   width: 100%;
 }
-.mat-mdc-tab-header-pagination-controls-enabled .mat-mdc-tab-header-pagination { display: none; }
+.mat-mdc-tab-header-pagination-controls-enabled .mat-mdc-tab-header-pagination { 
+  display: none !important; 
+}
 
 /* Media query for mobile view */
 @media (max-width: 600px) {
@@ -39,7 +41,7 @@ left: auto;
 
 }
 
-.mdc-tab {
+/* .mdc-tab {
   padding: 6px;
-}
+} */
 
