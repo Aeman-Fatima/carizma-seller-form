@@ -46,7 +46,8 @@ left: auto;
 }
 @media only screen and (max-width: 600px) {
   .mdc-tab {
-    padding-right: 20px !important;
-    padding-left: 20px !important;
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+    flex-grow: 0 !important;
   }
 }
