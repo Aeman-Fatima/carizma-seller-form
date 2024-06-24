@@ -1,0 +1,4 @@
+fileignoreconfig:
+- filename: vercel.json
+  checksum: 335ae6633e8946f96b06c6a199620b14e6d48cb23be8bb9a2a98838b3e4da985
+version: ""
