@@ -41,7 +41,13 @@ left: auto;
 
 }
 
-/* .mdc-tab {
-  padding: 6px;
-} */
+.mdc-tab {
+  max-width: auto !important;
+}
+@media only screen and (max-width: 400px) {
+  body {
+    padding-right: auto !important;
+    padding-left: auto !important;
 
+  }
+}
