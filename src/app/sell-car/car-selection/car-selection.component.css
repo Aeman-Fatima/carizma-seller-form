@@ -16,6 +16,7 @@
 .mat-tab-group {
   width: 100%;
 }
+.mat-mdc-tab-header-pagination-controls-enabled .mat-mdc-tab-header-pagination { display: none; }
 
 /* Media query for mobile view */
 @media (max-width: 600px) {
