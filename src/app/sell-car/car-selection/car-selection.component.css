@@ -1,10 +1,16 @@
 
 .card11 {
-  box-shadow: 3px 3px 5px 1px grey !important;
+  box-shadow: 3px 3px 5px 1px grey ;
   background-image: #fff;
   padding: 10px 0;
   width: 100%;
-  border-radius: 10px !important;
+  border-radius: 4px !important;
+  background-color: rgb(255, 255, 255);
+    color: rgba(0, 0, 0, 0.87);
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: none;
 }
 
 .mat-tab-group {
