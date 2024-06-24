@@ -49,5 +49,6 @@ left: auto;
     padding-right: 0px !important;
     padding-left: 0px !important;
     flex-grow: 0 !important;
+    width: 33%!important;
   }
 }
