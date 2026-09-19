@@ -131,26 +131,34 @@ Carizma Backend       ← Not included
        └── Salesforce integration
 ```
 
----
-
 ## Screenshots
 
-### Vehicle Identification
-
-![Vehicle identification](src/screenshots/form.png)
-
-### Vehicle Condition
-
-![Vehicle condition questionnaire](src/screenshots/questionnaire.png)
-
-### Review
-
-![Seller submission review](src/screenshots/details.png)
-
-### Instant Offer
-
-![Instant vehicle offer](src/screenshots/offer.png)
----
+<table>
+  <tr>
+    <td width="50%">
+      <img src="src/screenshots/form.png" alt="Vehicle Selection">
+      <br>
+      <strong>Vehicle Identification</strong>
+    </td>
+    <td width="50%">
+      <img src="src/screenshots/questionnaire.png" alt="Vehicle Condition">
+      <br>
+      <strong>Condition Assessment</strong>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <img src="src/screenshots/details.png" alt="Review">
+      <br>
+      <strong>Seller Review</strong>
+    </td>
+    <td width="50%">
+      <img src="src/screenshots/offer.png" alt="Instant Offer">
+      <br>
+      <strong>Instant Offer</strong>
+    </td>
+  </tr>
+</table>
 
 ## About
 
