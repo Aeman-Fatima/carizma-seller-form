@@ -135,13 +135,21 @@ Carizma Backend       ← Not included
 
 ## Screenshots
 
-> Add screenshots here showing:
->
-> 1. Vehicle identification
-> 2. Condition questionnaire
-> 3. Review screen
-> 4. Instant offer
+### Vehicle Identification
 
+![Vehicle identification](src/screenshots/form.png)
+
+### Vehicle Condition
+
+![Vehicle condition questionnaire](src/screenshots/questionnaire.png)
+
+### Review
+
+![Seller submission review](src/screenshots/details.png)
+
+### Instant Offer
+
+![Instant vehicle offer](src/screenshots/offer.png)
 ---
 
 ## About
